@@ -1,6 +1,6 @@
 import { GameService } from "./service.interface";
 import { GameObject } from "./game.interface";
-import { RatherGameService } from "./wouldYouRather/providers/rather-service";
+import { RatherGameService } from "./wouldYouRather/rather-service";
 
 export function GetGameFromString(game: Games): GameService<GameObject> {
     switch(game) {
