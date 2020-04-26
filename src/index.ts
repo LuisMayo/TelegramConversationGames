@@ -11,7 +11,7 @@ const bot = new Telegraf.default(conf.token);
 
 bot.start(showStart);
 
-bot.command('about', ctx => ctx.reply('Bot made byt Luis Mayo. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames'));
+bot.command('about', ctx => ctx.reply('Bot made by Luis Mayo. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames'));
 
 
 bot.command('wouldyourather', ctx => processGameCommand(ctx, Games.RATHER));
