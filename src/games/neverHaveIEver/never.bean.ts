@@ -10,7 +10,7 @@ export class NeverBean implements GameObject {
 
     sendMessage(ctx: Context) {
         const keyboardHelper = NeverGameService.instance.createNeverKeyboard();
-        ctx.reply(this.title, { reply_markup: { inline_keyboard: keyboardHelper.buttons } }).then(message => {
+        ctx.reply('Never have I ever ' + this.title, { reply_markup: { inline_keyboard: keyboardHelper.buttons } }).then(message => {
             NeverGameService.instance.saveNewMessage(ctx.chat.id.toString(), message);
         });
     }
