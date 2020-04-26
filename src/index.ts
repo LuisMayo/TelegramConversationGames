@@ -28,7 +28,7 @@ function processGameCommand(ctx: Telegraf.Context, game: Games) {
         ctx.reply('An error ocurred while trying to get the game\n' + error.name + ': ' +error.message);
     });
 }
-Utils.registerHandler('rather', RatherGameService.handleCallBack);
+Utils.registerHandler('rather', RatherGameService.instance.handleCallBack);
 
 function showStart(ctx: Telegraf.Context) {
     ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\nAvaiable games:\n/wouldyourather - Gimme a would you rather question');

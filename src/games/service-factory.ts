@@ -5,7 +5,7 @@ import { RatherGameService } from "./wouldYouRather/rather-service";
 export function GetGameFromString(game: Games): GameService<GameObject> {
     switch(game) {
         case Games.RATHER:
-            return new RatherGameService();
+            return RatherGameService.instance;
     }
 }
 

@@ -13,9 +13,9 @@ export class Rather implements GameObject {
     sendMessage(ctx: Context) {
         let message = this.nsfw ? '⚠NSFW!⚠\n' : '';
         message += `${this.title}\n 🔴 ${this.choicea}\n 🔵 ${this.choiceb}`;
-        const keyboardHelper = RatherGameService.createRatherKeyboard();
+        const keyboardHelper = RatherGameService.instance.createRatherKeyboard();
         ctx.reply(message, {reply_markup: {inline_keyboard: keyboardHelper.buttons}}).then(message => {
-            RatherGameService.saveNewMessage(ctx.chat.id.toString(), message);
+            RatherGameService.instance.saveNewMessage(ctx.chat.id.toString(), message);
         });
     }
 }
