@@ -35,6 +35,6 @@ function processGameCommand(ctx: Telegraf.Context, game: Games) {
 }
 
 function showStart(ctx: Telegraf.Context) {
-    ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\nAvaiable games:\n/wouldyourather - Gimme a would you rather question');
+    ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\nAvaiable games:\n/wouldyourather - Gimme a would you rather question\n/neverhaveiever - Have you ever done this?');
 }
 bot.launch();
