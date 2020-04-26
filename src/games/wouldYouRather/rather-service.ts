@@ -6,7 +6,7 @@ import Telegraf, { Context, Telegram } from 'telegraf';
 import { HandlerFunctionInterface, Utils } from '../../utils';
 import { ButtonKeyBoardHelper } from '../../button-keyboard-helper';
 import { User, Message } from 'telegraf/typings/telegram-types';
-import { BotService } from '../../bot';
+import { GeneralService } from '../../bot';
 
 // Maybe this should me moved into the rrrather provider but I'll leavce it here since it's the only provider rn
 export class RatherGameService extends GameService<Rather> {

@@ -6,12 +6,14 @@ import { Rather } from "./games/wouldYouRather/rather.bean";
 import { GetGameFromString, Games } from "./games/service-factory";
 import { Utils } from "./utils";
 import { RatherGameService } from "./games/wouldYouRather/rather-service";
-import { BotService } from "./bot";
+import { GeneralService } from "./bot";
+import { NeverGameService } from "./games/neverHaveIEver/never-service";
 
 const confPath = process.argv[2] || './conf';
 const conf: Conf = JSON.parse(fs.readFileSync(confPath + '/conf.json', { encoding: 'UTF-8' }));
 const bot = new Telegraf.default(conf.token);
-BotService.bot = bot;
+GeneralService.bot = bot;
+NeverGameService.instance.questions = JSON.parse(fs.readFileSync('./src/games/neverHaveIEver/questions.json', { encoding: 'UTF-8' }));
 
 bot.start(showStart);
 
@@ -19,7 +21,10 @@ bot.command('about', ctx => ctx.reply('Bot made by Luis Mayo. Check it out on it
 
 
 bot.command('wouldyourather', ctx => processGameCommand(ctx, Games.RATHER));
+bot.command('neverhaveiever', ctx => processGameCommand(ctx, Games.NEVER));
 bot.action(/.*/, Utils.executeCallback);
+Utils.registerHandler('rather', RatherGameService.instance.handleCallBack);
+Utils.registerHandler('never', NeverGameService.instance.handleCallBack);
 
 function processGameCommand(ctx: Telegraf.Context, game: Games) {
     GetGameFromString(game).getGameObject().then((data: Rather) => {
@@ -28,7 +33,6 @@ function processGameCommand(ctx: Telegraf.Context, game: Games) {
         ctx.reply('An error ocurred while trying to get the game\n' + error.name + ': ' +error.message);
     });
 }
-Utils.registerHandler('rather', RatherGameService.instance.handleCallBack);
 
 function showStart(ctx: Telegraf.Context) {
     ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\nAvaiable games:\n/wouldyourather - Gimme a would you rather question');

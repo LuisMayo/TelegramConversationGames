@@ -3,7 +3,7 @@ import { User, Message } from "telegraf/typings/telegram-types";
 import { HandlerFunctionInterface } from "../utils";
 import { RatherGameService } from "./wouldYouRather/rather-service";
 import { Context } from "telegraf";
-import { BotService } from "../bot";
+import { GeneralService } from "../bot";
 import { CallbackButton, Button } from "telegraf/typings/markup";
 
 export abstract class GameService <T extends GameObject> {
@@ -47,7 +47,7 @@ export abstract class GameService <T extends GameObject> {
     
     private expiredMessage(id: string) {
         const separatorIndex = id.indexOf(':');
-        BotService.bot.telegram.editMessageReplyMarkup(id.substring(0, separatorIndex), +id.substring(separatorIndex +1) , null, '');
+        GeneralService.bot.telegram.editMessageReplyMarkup(id.substring(0, separatorIndex), +id.substring(separatorIndex +1) , null, '');
         GameService.messagesHistory.delete(id);
     }
     
