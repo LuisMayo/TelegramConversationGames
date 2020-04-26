@@ -25,7 +25,7 @@ export class NeverGameService extends GameService<NeverBean> {
     }
 
     public getLine(user: User, payload: string) {
-        return `User ${Utils.makeUserLink(user)} has ${payload === 'y' ? 'done it 😈' : 'never done it 😇'}`;
+        return `User ${Utils.makeUserLink(user)} has ${payload === 'y' ? 'done it' : 'never done it'}`;
     }
 
     public getKeyboard() {
