@@ -19,6 +19,7 @@ export abstract class GameWithCallbackService <T extends GameObject> {
                 gameMessage.usersArr.push({payload: payload, user: ctx.from});
             }
             ctx.editMessageText(gameMessage.text + '\n' + this.generateTextForUserList(gameMessage.usersArr), {parse_mode: 'Markdown', reply_markup: {inline_keyboard: this.getKeyboard()}});
+            ctx.answerCbQuery();
         }
     }
 
