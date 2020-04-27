@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch';
-import { GameService } from '../service.interface';
+import { GameWithCallbackService } from '../service.interface';
 import { Rather } from './rather.bean';
 import { convertFromRrrather } from './providers/rrrather/rrrather.interface';
 import Telegraf, { Context, Telegram } from 'telegraf';
@@ -9,7 +9,7 @@ import { User, Message } from 'telegraf/typings/telegram-types';
 import { GeneralService } from '../../bot';
 
 // Maybe this should me moved into the rrrather provider but I'll leavce it here since it's the only provider rn
-export class RatherGameService extends GameService<Rather> {
+export class RatherGameService extends GameWithCallbackService<Rather> {
 
     static instance = new RatherGameService();
 

@@ -1,7 +1,8 @@
-import { GameService } from "./service.interface";
+import { GameWithCallbackService } from "./service.interface";
 import { GameObject } from "./game.interface";
 import { RatherGameService } from "./wouldYouRather/rather-service";
 import { NeverGameService } from "./neverHaveIEver/never-service";
+import { GameService } from "./generic-game.service";
 
 export function GetGameFromString(game: Games): GameService<GameObject> {
     switch (game) {

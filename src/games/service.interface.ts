@@ -1,17 +1,16 @@
 import { GameObject } from "./game.interface";
 import { User, Message } from "telegraf/typings/telegram-types";
 import { HandlerFunctionInterface } from "../utils";
-import { RatherGameService } from "./wouldYouRather/rather-service";
 import { Context } from "telegraf";
 import { GeneralService } from "../bot";
 import { CallbackButton, Button } from "telegraf/typings/markup";
 
-export abstract class GameService <T extends GameObject> {
+export abstract class GameWithCallbackService <T extends GameObject> {
     static messagesHistory: Map<string, {text: string, usersArr: {user: User, payload: string}[]}> = new Map();
 
     handleCallBack: HandlerFunctionInterface = (ctx: Context, payload: string) => {
         const id = ctx.chat.id + ':' + ctx.callbackQuery.message.message_id;
-        const gameMessage = GameService.messagesHistory.get(id);
+        const gameMessage = GameWithCallbackService.messagesHistory.get(id);
         if (gameMessage) {
             const user = gameMessage.usersArr.find(user => user.user.id === ctx.from.id);
             if (user != null) {
@@ -37,8 +36,8 @@ export abstract class GameService <T extends GameObject> {
 
     public saveNewMessage(chatId: string, mess: Message) {
         const id = chatId + ':' + mess.message_id;
-        if (!GameService.messagesHistory.has(id)) {
-            GameService.messagesHistory.set(id, {text: mess.text, usersArr: []});
+        if (!GameWithCallbackService.messagesHistory.has(id)) {
+            GameWithCallbackService.messagesHistory.set(id, {text: mess.text, usersArr: []});
             setTimeout(this.expiredMessage, 24 * 60 * 60 * 1000, id);
         }
         return id;
@@ -48,7 +47,7 @@ export abstract class GameService <T extends GameObject> {
     private expiredMessage(id: string) {
         const separatorIndex = id.indexOf(':');
         GeneralService.bot.telegram.editMessageReplyMarkup(id.substring(0, separatorIndex), +id.substring(separatorIndex +1) , null, '');
-        GameService.messagesHistory.delete(id);
+        GameWithCallbackService.messagesHistory.delete(id);
     }
     
     abstract getGameObject(): Promise<T | Error>;

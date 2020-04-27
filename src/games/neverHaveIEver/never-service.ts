@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch';
-import { GameService } from '../service.interface';
+import { GameWithCallbackService } from '../service.interface';
 import { NeverBean } from './never.bean';
 import Telegraf, { Context, Telegram } from 'telegraf';
 import { HandlerFunctionInterface, Utils } from '../../utils';
@@ -8,7 +8,7 @@ import { User, Message } from 'telegraf/typings/telegram-types';
 import { GeneralService } from '../../bot';
 
 // Maybe this should me moved into the rrrather provider but I'll leavce it here since it's the only provider rn
-export class NeverGameService extends GameService<NeverBean> {
+export class NeverGameService extends GameWithCallbackService<NeverBean> {
 
     static instance = new NeverGameService();
     questions: string[];
