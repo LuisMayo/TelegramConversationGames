@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch';
-import { GameWithCallbackService } from '../service.interface';
+import { GameWithCallbackService } from '../callback-generic-class';
 import { NeverBean } from './never.bean';
 import Telegraf, { Context, Telegram } from 'telegraf';
 import { HandlerFunctionInterface, Utils } from '../../utils';

@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch';
-import { GameWithCallbackService } from '../service.interface';
+import { GameWithCallbackService } from '../callback-generic-class';
 import { Rather } from './rather.bean';
 import { convertFromRrrather } from './providers/rrrather/rrrather.interface';
 import Telegraf, { Context, Telegram } from 'telegraf';

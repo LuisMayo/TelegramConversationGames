@@ -1,4 +1,3 @@
-import { GameWithCallbackService } from "./service.interface";
 import { GameObject } from "./game.interface";
 import { RatherGameService } from "./wouldYouRather/rather-service";
 import { NeverGameService } from "./neverHaveIEver/never-service";
