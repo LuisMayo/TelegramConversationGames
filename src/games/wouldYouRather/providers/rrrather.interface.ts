@@ -1,4 +1,5 @@
-import { Rather } from "../../rather.bean";
+import { Rather } from "../rather.bean";
+import fetch  from 'cross-fetch';
 
 export interface RrratherResponse {
     title:       string;
@@ -19,4 +20,14 @@ export function convertFromRrrather(rrrather: RrratherResponse) {
     rather.nsfw = rrrather.nsfw;
     rather.votesa = rather.votesb = null;
     return rather;
+}
+
+export function GetRrratherQuestion(): Promise<Rather | Error> {
+    return new Promise((resolve, reject) => {
+        fetch('https://www.rrrather.com/botapi').then(data => {
+            data.json().then(object => resolve(convertFromRrrather(object))).catch(reject);
+        }).catch(error => {
+            reject(error);
+        });
+    });
 }
