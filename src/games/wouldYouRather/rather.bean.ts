@@ -15,8 +15,8 @@ export class Rather implements GameObject {
         let votePercentageB = '';
         if (this.votesa && this.votesb) {
             const total = this.votesa + this.votesb;
-            votePercentageA = '(' + (this.votesa * 100 / total).toFixed(1) + '%) ';
-            votePercentageB = '(' + (this.votesb * 100 / total).toFixed(1) + '%) ';
+            votePercentageA = '(' + Math.round(this.votesa * 100 / total) + '%) ';
+            votePercentageB = '(' + Math.round(this.votesb * 100 / total) + '%) ';
         }
         let message = this.nsfw ? '⚠NSFW!⚠\n' : '';
         message += `${this.title}\n ${votePercentageA}🔴 ${this.choicea}\n ${votePercentageB}🔵 ${this.choiceb}`;
