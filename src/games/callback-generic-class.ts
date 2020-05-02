@@ -51,7 +51,7 @@ export abstract class GameWithCallbackService <T extends GameObject> {
         GameWithCallbackService.messagesHistory.delete(id);
     }
     
-    abstract getGameObject(): Promise<T | Error>;
+    abstract getGameObject(ctx?: Context): Promise<T | Error>;
     abstract getLine(user: User, payload: string): string;
     abstract getKeyboard(): (CallbackButton | Button)[][];
 }

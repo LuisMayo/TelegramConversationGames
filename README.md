@@ -1,6 +1,6 @@
 # TelegramConversationGamesBot
 Telegram bot to play conversational games
-Currently only has wouldyourather and never have i ever
+Currently only has wouldyourather, never have i ever and f*ck marry kill
 You can check it at [@conversationGamesBot](https://t.me/conversationGamesBot)
 
 Never Have I Ever questions gathered from https://github.com/stathism27/Never-Have-I-Ever and https://github.com/promise/nevrevr
