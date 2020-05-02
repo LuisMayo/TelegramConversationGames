@@ -17,11 +17,18 @@ export class FMKBean implements GameObject {
         for (const person of this.people) {
             media.push({ media: person.image, type: 'photo', caption: person.name });
         }
-        const keyboardHelper = FMKGameService.instance.createFMKKeyboard();
         ctx.replyWithMediaGroup(media).then(messages => {
-            ctx.reply(testMessage, {reply_markup: { inline_keyboard: keyboardHelper.buttons }}).then(message => {
-                FMKGameService.instance.saveNewMessage(ctx.chat.id.toString(), message);
-            })
+            this.sendPersonMessage(0, ctx);
+        });
+    }
+    
+    private sendPersonMessage(index: number, ctx: Context) {
+        const keyboardHelper = FMKGameService.instance.createFMKKeyboard();
+        ctx.reply(`What would you do with ${this.people[index].name}?`, {reply_markup: { inline_keyboard: keyboardHelper.buttons }}).then(message => {
+            FMKGameService.instance.saveNewMessage(ctx.chat.id.toString(), message);
+            if (index < 2) {
+                this.sendPersonMessage(index + 1, ctx);
+            }
         });
     }
 

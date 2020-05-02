@@ -37,18 +37,15 @@ export class FMKGameService extends GameWithCallbackService<FMKBean> {
 
     createFMKKeyboard() {
         const keyboardHelper = new ButtonKeyBoardHelper();
-        keyboardHelper.addNewButton('1️⃣', 'fmk:1️⃣');
-        keyboardHelper.addNewButton('2️⃣', 'fmk:2️⃣');
-        keyboardHelper.addNewButton('3️⃣', 'fmk:3️⃣');
-        keyboardHelper.addNewButton('4️⃣', 'fmk:4️⃣');
-        keyboardHelper.addNewButton('5️⃣', 'fmk:5️⃣');
-        keyboardHelper.addNewButton('6️⃣', 'fmk:6️⃣');
+        keyboardHelper.addNewButton('Fuck', 'fmk:fuck');
+        keyboardHelper.addNewButton('Marry', 'fmk:marry');
+        keyboardHelper.addNewButton('Kill', 'fmk:kill');
         return keyboardHelper;
     }
 
 
     public getLine(user: User, payload: string) {
-        return `User ${Utils.makeUserLink(user)} has chosen ${payload}`;
+        return `User ${Utils.makeUserLink(user)} will ${payload} them`;
     }
 
 }
