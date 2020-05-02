@@ -1,7 +1,7 @@
 # TelegramConversationGamesBot
 Telegram bot to play conversational games
 Currently only has wouldyourather and never have i ever
-You can check it at [@conversationGamesBot](t.me/conversationGamesBot)
+You can check it at [@conversationGamesBot](https://t.me/conversationGamesBot)
 
 Never Have I Ever questions gathered from https://github.com/stathism27/Never-Have-I-Ever and https://github.com/promise/nevrevr
 
