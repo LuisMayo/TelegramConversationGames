@@ -18,7 +18,14 @@ export abstract class GameWithCallbackService <T extends GameObject> {
             } else {
                 gameMessage.usersArr.push({payload: payload, user: ctx.from});
             }
-            ctx.editMessageText(gameMessage.text + '\n' + this.generateTextForUserList(gameMessage.usersArr), {parse_mode: 'Markdown', reply_markup: {inline_keyboard: this.getKeyboard()}});
+
+            const newText = gameMessage.text + '\n' + this.generateTextForUserList(gameMessage.usersArr);
+            if (ctx.callbackQuery.message.photo) {
+                // https://github.com/telegraf/telegraf/issues/1028 cuando se arregle eso hay que poner Markdown
+                ctx.editMessageCaption(newText, {inline_keyboard: this.getKeyboard()});
+            } else {
+                ctx.editMessageText(newText, {parse_mode: 'Markdown', reply_markup: {inline_keyboard: this.getKeyboard()}});
+            }
             ctx.answerCbQuery();
         }
     }
@@ -38,7 +45,7 @@ export abstract class GameWithCallbackService <T extends GameObject> {
     public saveNewMessage(chatId: string, mess: Message) {
         const id = chatId + ':' + mess.message_id;
         if (!GameWithCallbackService.messagesHistory.has(id)) {
-            GameWithCallbackService.messagesHistory.set(id, {text: mess.text, usersArr: []});
+            GameWithCallbackService.messagesHistory.set(id, {text: mess.photo ? mess.caption : mess.text, usersArr: []});
             setTimeout(this.expiredMessage, 24 * 60 * 60 * 1000, id);
         }
         return id;

@@ -45,7 +45,9 @@ export class FMKGameService extends GameWithCallbackService<FMKBean> {
 
 
     public getLine(user: User, payload: string) {
-        return `User ${Utils.makeUserLink(user)} will ${payload} them`;
+        // No podemos utilizar enlaces hasta que se resuelva esto: https://github.com/telegraf/telegraf/issues/1028
+        // return `User ${Utils.makeUserLink(user)} will ${payload} them`;
+        return `User ${user.first_name} will ${payload} them`
     }
 
 }
