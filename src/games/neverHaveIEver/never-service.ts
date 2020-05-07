@@ -16,7 +16,7 @@ export class NeverGameService extends GameWithCallbackService<NeverBean> {
 
     constructor() {
         super();
-        this.questions = JSON.parse(fs.readFileSync('../questions.json', { encoding: 'UTF-8' }));
+        this.questions = JSON.parse(fs.readFileSync('./src/games/neverHaveIEver/questions.json', { encoding: 'UTF-8' }));
     }
 
     getGameObject(ctx: Context): Promise<NeverBean | Error> {
