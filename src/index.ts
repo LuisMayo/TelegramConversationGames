@@ -14,7 +14,6 @@ const confPath = process.argv[2] || './conf';
 const conf: Conf = JSON.parse(fs.readFileSync(confPath + '/conf.json', { encoding: 'UTF-8' }));
 const bot = new Telegraf.default(conf.token);
 GeneralService.bot = bot;
-NeverGameService.instance.questions = JSON.parse(fs.readFileSync('./src/games/neverHaveIEver/questions.json', { encoding: 'UTF-8' }));
 
 bot.start(showStart);
 

@@ -6,6 +6,7 @@ import { HandlerFunctionInterface, Utils } from '../../utils';
 import { ButtonKeyBoardHelper } from '../../button-keyboard-helper';
 import { User, Message } from 'telegraf/typings/telegram-types';
 import { GeneralService } from '../../bot';
+import * as fs from 'fs';
 
 // Maybe this should me moved into the rrrather provider but I'll leavce it here since it's the only provider rn
 export class NeverGameService extends GameWithCallbackService<NeverBean> {
@@ -13,7 +14,12 @@ export class NeverGameService extends GameWithCallbackService<NeverBean> {
     static instance = new NeverGameService();
     questions: string[];
 
-    getGameObject(): Promise<NeverBean | Error> {
+    constructor() {
+        super();
+        this.questions = JSON.parse(fs.readFileSync('../questions.json', { encoding: 'UTF-8' }));
+    }
+
+    getGameObject(ctx: Context): Promise<NeverBean | Error> {
         return Promise.resolve(new NeverBean(this.questions[Math.floor(Math.random() * this.questions.length)]));
     }
 
