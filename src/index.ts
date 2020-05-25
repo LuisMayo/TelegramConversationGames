@@ -31,7 +31,8 @@ Utils.registerHandler('never', NeverGameService.instance.handleCallBack);
 Utils.registerHandler('fmk', FMKGameService.instance.handleCallBack);
 
 function processGameCommand(ctx: Telegraf.Context, game: Games) {
-    console.log('New ' + game + ' command');
+	const date = new Date();
+    console.log('[' + date + '] New ' + game + ' command');
     GetGameFromString(game).getGameObject(ctx).then((data: Rather) => {
         data.sendMessage(ctx);
     }).catch((error: Error) => {
