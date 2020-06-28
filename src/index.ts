@@ -22,6 +22,9 @@ bot.command('about', ctx => ctx.reply('Bot made by Luis Mayo. Check it out on it
 
 bot.command('wouldyourather', ctx => processGameCommand(ctx, Games.RATHER));
 bot.command('neverhaveiever', ctx => processGameCommand(ctx, Games.NEVER));
+bot.command('tod', ctx => processGameCommand(ctx, Games.TOD));
+bot.command('truth', ctx => processGameCommand(ctx, Games.TOD));
+bot.command('dare', ctx => processGameCommand(ctx, Games.TOD));
 bot.command('fmk', ctx => ctx.reply('May you want to play /fmkguys or /fmkgirls ?'));
 bot.command('fmkguys', ctx => processGameCommand(ctx, Games.FMK));
 bot.command('fmkgirls', ctx => processGameCommand(ctx, Games.FMK));

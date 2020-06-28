@@ -5,6 +5,8 @@ You can check it at [@conversationGamesBot](https://t.me/conversationGamesBot)
 
 Never Have I Ever questions gathered from https://github.com/stathism27/Never-Have-I-Ever and https://github.com/promise/nevrevr
 
+Truth or Dare questions gathered from https://github.com/sylhare/Truth-or-Dare
+
 ### Adding a new game
 You can check this commit to know how to add games: https://github.com/LuisMayo/TelegramConversationGames/commit/616d8cf6ca32c6d2b573ac3906ac65683fc1191c
 
