@@ -23,11 +23,11 @@
   "homepage": "https://github.com/LuisMayo/TelegramConversationGames#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
-    "cross-fetch": "^3.0.4",
+    "cross-fetch": "^3.0.5",
     "telegraf": "^3.35.0"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.18",
-    "@types/node": "^13.1.6"
+    "@types/node": "^13.13.12"
   }
 }
