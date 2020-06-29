@@ -1,6 +1,5 @@
 import { GameWithCallbackService } from '../callback-generic-class';
 import { Rather } from './rather.bean';
-import { GetRrratherQuestion } from './providers/rrrather.interface';
 import { Utils } from '../../utils';
 import { ButtonKeyBoardHelper } from '../../button-keyboard-helper';
 import { User, Message } from 'telegraf/typings/telegram-types';
@@ -12,7 +11,7 @@ export class RatherGameService extends GameWithCallbackService<Rather> {
     static instance = new RatherGameService();
 
     getGameObject(): Promise<Rather | Error> {
-        return Math.random() < 0.1 ? GetRrratherQuestion() : GetEitherioQuestion();
+        return GetEitherioQuestion();
     }
 
 
