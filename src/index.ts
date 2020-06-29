@@ -9,6 +9,8 @@ import { RatherGameService } from "./games/wouldYouRather/rather-service";
 import { GeneralService } from "./bot";
 import { NeverGameService } from "./games/neverHaveIEver/never-service";
 import { FMKGameService } from "./games/fmk/fmk-service";
+import { PressTheButtonBean } from "./games/pressTheButton/press-the-button.bean";
+import { PressTheButtonService } from "./games/pressTheButton/press-the-button.service";
 
 const confPath = process.argv[2] || './conf';
 const conf: Conf = JSON.parse(fs.readFileSync(confPath + '/conf.json', { encoding: 'UTF-8' }));
@@ -28,10 +30,12 @@ bot.command('dare', ctx => processGameCommand(ctx, Games.TOD));
 bot.command('fmk', ctx => ctx.reply('May you want to play /fmkguys or /fmkgirls ?'));
 bot.command('fmkguys', ctx => processGameCommand(ctx, Games.FMK));
 bot.command('fmkgirls', ctx => processGameCommand(ctx, Games.FMK));
+bot.command('pressthebutton', ctx => processGameCommand(ctx, Games.PRESSTHEBUTTON));
 bot.action(/.*/, Utils.executeCallback);
 Utils.registerHandler('rather', RatherGameService.instance.handleCallBack);
 Utils.registerHandler('never', NeverGameService.instance.handleCallBack);
 Utils.registerHandler('fmk', FMKGameService.instance.handleCallBack);
+Utils.registerHandler('pressTheButton', PressTheButtonService.instance.handleCallBack);
 
 function processGameCommand(ctx: Telegraf.Context, game: Games) {
 	const date = new Date();
@@ -44,6 +48,14 @@ function processGameCommand(ctx: Telegraf.Context, game: Games) {
 }
 
 function showStart(ctx: Telegraf.Context) {
-    ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\nAvaiable games:\n/wouldyourather - Gimme a would you rather question\n/neverhaveiever - Have you ever done this?\n/fmk - Who do you want to fuck, marry and kill?');
+    ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\n' +
+    'Avaiable games:\n' +
+    '/wouldyourather - Gimme a would you rather question\n'+
+    '/neverhaveiever - Have you ever done this?\n'+
+    '/fmk - Who do you want to fuck, marry and kill?\n'+
+    '/tod - Play truth or dare\n'+
+    '/truth - Only the "truth" questions of Truth or Dare\n'+
+    '/dare - Only the dares\n'+
+    '/pressTheButton - Would you press the button?');
 }
 bot.launch();
