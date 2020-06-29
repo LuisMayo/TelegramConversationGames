@@ -12,7 +12,7 @@ export class RatherGameService extends GameWithCallbackService<Rather> {
     static instance = new RatherGameService();
 
     getGameObject(): Promise<Rather | Error> {
-        return Math.random() < 0.01 ? GetRrratherQuestion() : GetEitherioQuestion();
+        return Math.random() < 0.1 ? GetRrratherQuestion() : GetEitherioQuestion();
     }
 
 
