@@ -22,20 +22,18 @@ bot.start(showStart);
 bot.command('about', ctx => ctx.reply('Bot made by Luis Mayo. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames'));
 
 
-bot.command('wouldyourather', ctx => processGameCommand(ctx, Games.RATHER));
-bot.command('neverhaveiever', ctx => processGameCommand(ctx, Games.NEVER));
-bot.command('tod', ctx => processGameCommand(ctx, Games.TOD));
-bot.command('truth', ctx => processGameCommand(ctx, Games.TOD));
-bot.command('dare', ctx => processGameCommand(ctx, Games.TOD));
 bot.command('fmk', ctx => ctx.reply('May you want to play /fmkguys or /fmkgirls ?'));
-bot.command('fmkguys', ctx => processGameCommand(ctx, Games.FMK));
-bot.command('fmkgirls', ctx => processGameCommand(ctx, Games.FMK));
-bot.command('pressthebutton', ctx => processGameCommand(ctx, Games.PRESSTHEBUTTON));
+
+registerCommand('wouldyourather', Games.RATHER, 'rather')
+registerCommand('neverhaveiever', Games.NEVER, 'never')
+registerCommand('tod', Games.TOD)
+registerCommand('truth', Games.TOD)
+registerCommand('dare', Games.TOD)
+registerCommand('fmkguys', Games.FMK, 'fmk')
+registerCommand('fmkgirls', Games.FMK, 'fmk')
+registerCommand('pressthebutton', Games.PRESSTHEBUTTON, 'pressTheButton')
+
 bot.action(/.*/, Utils.executeCallback);
-Utils.registerHandler('rather', RatherGameService.instance.handleCallBack);
-Utils.registerHandler('never', NeverGameService.instance.handleCallBack);
-Utils.registerHandler('fmk', FMKGameService.instance.handleCallBack);
-Utils.registerHandler('pressTheButton', PressTheButtonService.instance.handleCallBack);
 
 function processGameCommand(ctx: Telegraf.Context, game: Games) {
 	const date = new Date();
@@ -45,6 +43,13 @@ function processGameCommand(ctx: Telegraf.Context, game: Games) {
     }).catch((error: Error) => {
         ctx.reply('An error ocurred while trying to get the game\n' + error.name + ': ' +error.message);
     });
+}
+
+function registerCommand(command: string | string[], game: Games, callbackHandle?: string) {
+    bot.command(command, ctx => processGameCommand(ctx, game));
+    if (callbackHandle) {
+        Utils.registerHandler(callbackHandle, GetGameFromString(game).handleCallBack)
+    }
 }
 
 function showStart(ctx: Telegraf.Context) {
