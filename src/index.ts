@@ -1,16 +1,10 @@
 import { Conf } from "./conf";
 import * as fs from 'fs';
 import * as Telegraf from 'telegraf';
-import { User } from "telegraf/typings/telegram-types";
 import { Rather } from "./games/wouldYouRather/rather.bean";
 import { GetGameFromString, Games } from "./games/service-factory";
 import { Utils } from "./utils";
-import { RatherGameService } from "./games/wouldYouRather/rather-service";
 import { GeneralService } from "./bot";
-import { NeverGameService } from "./games/neverHaveIEver/never-service";
-import { FMKGameService } from "./games/fmk/fmk-service";
-import { PressTheButtonBean } from "./games/pressTheButton/press-the-button.bean";
-import { PressTheButtonService } from "./games/pressTheButton/press-the-button.service";
 import { CommandObject } from "./command-object";
 import { RandomGame } from "./random-game";
 
