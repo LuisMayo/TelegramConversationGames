@@ -1,3 +1,4 @@
+![Build](https://github.com/LuisMayo/TelegramConversationGames/workflows/Build/badge.svg?branch=master)
 # TelegramConversationGamesBot
 Telegram bot to play conversational games
 Currently only has wouldyourather, never have i ever and f*ck marry kill
