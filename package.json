@@ -24,7 +24,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "cross-fetch": "^3.0.5",
-    "telegraf": "^3.35.0"
+    "save": "^2.4.0",
+    "telegraf": "^3.35.0",
+    "typescript": "^4.0.2"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.18",
