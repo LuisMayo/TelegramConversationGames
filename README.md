@@ -1,6 +1,7 @@
+![Build](https://github.com/LuisMayo/TelegramConversationGames/workflows/Build/badge.svg?branch=master)
 # TelegramConversationGamesBot
 Telegram bot to play conversational games
-Currently only has wouldyourather, never have i ever and f*ck marry kill
+Currently only has wouldyourather, never have i ever, f*ck marry kill and press the button
 You can check it at [@conversationGamesBot](https://t.me/conversationGamesBot)
 
 Never Have I Ever questions gathered from https://github.com/stathism27/Never-Have-I-Ever and https://github.com/promise/nevrevr
