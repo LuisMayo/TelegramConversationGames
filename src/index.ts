@@ -14,7 +14,9 @@ const bot = new Telegraf.default(conf.token);
 const commandList: CommandObject[] = [];
 GeneralService.bot = bot;
 
-bot.start(showStart);
+bot.catch((err) => {
+  console.log('Ooops', err)
+})
 
 bot.command('about', ctx => ctx.reply('Bot made with ❤ by @TLuigi003. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames'));
 
