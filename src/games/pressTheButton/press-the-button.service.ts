@@ -8,7 +8,7 @@ import { GeneralService } from '../../bot';
 import * as fs from 'fs';
 import { GameService } from '../generic-game.service';
 import { PressTheButtonBean } from './press-the-button.bean';
-import * as cheerio from 'cheerio';
+import { PressTheButtonResponse } from './press-the-button-response';
 
 // Maybe this should me moved into the rrrather provider but I'll leavce it here since it's the only provider rn
 export class PressTheButtonService extends GameWithCallbackService<PressTheButtonBean> implements GameService<PressTheButtonBean>  {
@@ -23,10 +23,22 @@ export class PressTheButtonService extends GameWithCallbackService<PressTheButto
 
     async getGameObject(ctx: Context): Promise<PressTheButtonBean | Error> {
         try {
-            const download = await fetch('https://www.willyoupressthebutton.com/');
-            const page = await download.text();
-            const $ = cheerio.load(page);
-            const bean = new PressTheButtonBean($('#cond').text(), $('#res').text());
+            let show_unconfirmed: boolean;
+            if (ctx.message.text.includes('wyptbsafe')) {
+                show_unconfirmed = false;
+            } else if (ctx.message.text.includes('wyptbnotsafe')) {
+                show_unconfirmed = true;
+            } else {
+                show_unconfirmed = Math.random() < 0.35;
+            }
+            const download = await fetch('https://api2.willyoupressthebutton.com/api/v2/dilemma/',
+            {
+                method: 'POST',
+                headers: {'content-type': 'application/json'},
+                body: JSON.stringify({show_unconfirmed})
+            });
+            const object: PressTheButtonResponse = await download.json();
+            const bean = new PressTheButtonBean(object.dilemma);
             return bean;
         } catch (e) {
             throw new Error(e);
@@ -39,11 +51,11 @@ export class PressTheButtonService extends GameWithCallbackService<PressTheButto
         keyboardHelper.addNewButton('Don\'t press it', 'pressTheButton:n');
         return keyboardHelper;
     }
-
+    
     public getLine(user: User, payload: string) {
         return `User ${Utils.makeUserLink(user)} ${payload === 'y' ? 'would' : 'wouldn\'t'} press the button`;
     }
-
+    
     public getKeyboard() {
         return this.createNeverKeyboard().buttons;
     }
