@@ -14,6 +14,7 @@ const bot = new Telegraf.default(conf.token);
 const commandList: CommandObject[] = [];
 GeneralService.bot = bot;
 
+bot.start(showStart);
 bot.catch((err) => {
   console.log('Ooops', err)
 })
