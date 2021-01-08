@@ -70,7 +70,7 @@ function registerCommand(id: number | number[], command: string | string[], game
 
 function showStart(ctx: Telegraf.Context) {
     ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\n' +
-    'Avaiable games:\n' +
+    'Available games:\n' +
     '/wouldyourather - Gimme a would you rather question\n'+
     '/neverhaveiever - Have you ever done this?\n'+
     '/fmk - Who do you want to fuck, marry and kill?\n'+
