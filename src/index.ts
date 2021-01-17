@@ -1,5 +1,4 @@
 import { Conf } from "./conf";
-import * as fs from 'fs';
 import * as Telegraf from 'telegraf';
 import { Rather } from "./games/wouldYouRather/rather.bean";
 import { GetGameFromString, Games } from "./games/service-factory";
