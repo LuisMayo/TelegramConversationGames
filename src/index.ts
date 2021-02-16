@@ -19,7 +19,7 @@ bot.catch((err) => {
   console.log('Ooops', err)
 })
 
-bot.command('about', ctx => ctx.reply('Bot made with ❤ by @TLuigi003. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames'));
+bot.command('about', ctx => ctx.reply('Bot made with ❤ by @TLuigi003. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames.\n\nDo you like my work? You could thank me by buying me a [ko-fi](https://ko-fi.com/luismayo)', {parse_mode: 'Markdown'}));
 
 
 bot.command('fmk', ctx => ctx.reply('May you want to play /fmkguys or /fmkgirls ?'));
