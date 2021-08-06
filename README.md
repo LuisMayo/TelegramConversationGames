@@ -4,9 +4,13 @@ Telegram bot to play conversational games
 Currently only has wouldyourather, never have i ever, f*ck marry kill and press the button
 You can check it at [@conversationGamesBot](https://t.me/conversationGamesBot)
 
-Never Have I Ever questions gathered from https://github.com/stathism27/Never-Have-I-Ever and https://github.com/promise/nevrevr
+- Never Have I Ever questions extracted from https://github.com/stathism27/Never-Have-I-Ever and https://github.com/promise/nevrevr
+- Truth or Dare questions extracted from https://github.com/sylhare/Truth-or-Dare
+- F*ck marry kill questions gathered from https://www.fuckmarrykillgame.com/
+- Would you press the button questions gathered from https://willyoupressthebutton.com/
+- Would you rather questions gathered from http://either.io
 
-Truth or Dare questions gathered from https://github.com/sylhare/Truth-or-Dare
+Would you rather questions extracted from 
 
 
 ## Getting Started
