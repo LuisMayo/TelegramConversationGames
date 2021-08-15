@@ -16,15 +16,31 @@ GeneralService.bot = bot;
 
 bot.start(showStart);
 bot.catch((err) => {
-  console.log('Ooops', err)
+    console.log('Ooops', err)
 })
 
-bot.command('about', ctx => ctx.reply('Bot made with ❤ by @TLuigi003. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames.\n\nDo you like my work? You could thank me by buying me a [ko-fi](https://ko-fi.com/luismayo)', {parse_mode: 'Markdown'}));
+bot.command('about', ctx => ctx.reply('Bot made with ❤ by @TLuigi003. Check it out on its Github page: https://github.com/LuisMayo/TelegramConversationGames.\n\nDo you like my work? You could thank me by buying me a [ko-fi](https://ko-fi.com/luismayo)', { parse_mode: 'Markdown' }));
 
 
 bot.command('fmk', ctx => ctx.reply('May you want to play /fmkguys or /fmkgirls ?'));
 bot.command('pressthebutton', ctx => ctx.reply('Do you want to play\n/wyptbsafe - A list of verified and moderated questions\n/wyptb - Any question, safe or not. it may include NSFW content\n/wyptbnotsafe - ONLY unchecked questions, it may include NSFW content'));
 bot.command('random', RandomGame.initFirstTimeMessage);
+bot.command(['contribute', 'donate'], (ctx) => {
+    ctx.replyWithInvoice(
+        {
+            title: 'Support the project',
+            currency: 'EUR',
+            payload: 'null',
+            start_parameter: 'null',
+            description: 'Help to keep this project alive with a small contribution',
+            provider_token: conf.paymentToken,
+            prices: [
+                { label: 'Contribution', amount: 100 }
+            ],
+            
+        }
+    );
+});
 
 registerCommand(0, 'wouldyourather', Games.RATHER, 'rather');
 registerCommand(1, 'neverhaveiever', Games.NEVER, 'never');
@@ -43,22 +59,22 @@ bot.action(/.*/, Utils.executeCallback);
 bot.use(RandomGame.randomCommand);
 
 function processGameCommand(ctx: Telegraf.Context, game: Games) {
-	const date = new Date();
+    const date = new Date();
     console.log('[' + date + '] New ' + game + ' command');
     GetGameFromString(game).getGameObject(ctx).then((data: Rather) => {
         data.sendMessage(ctx);
     }).catch((error: Error) => {
-        ctx.reply('An error ocurred while trying to get the game\n' + error.name + ': ' +error.message);
+        ctx.reply('An error ocurred while trying to get the game\n' + error.name + ': ' + error.message);
     });
 }
 
 function registerCommand(id: number | number[], command: string | string[], game: Games, callbackHandle?: string) {
     if (typeof command === 'string') {
-        commandList.push({id: id as number, command: command, game: game});
+        commandList.push({ id: id as number, command: command, game: game });
     } else {
         let i = 0;
         for (const singleCommand of command) {
-            commandList.push({id: id[i], command: singleCommand, game: game});
+            commandList.push({ id: id[i], command: singleCommand, game: game });
             i++;
         }
     }
@@ -70,14 +86,14 @@ function registerCommand(id: number | number[], command: string | string[], game
 
 function showStart(ctx: Telegraf.Context) {
     ctx.reply('Welcome to conversation games bot. Let\'s generate some conversation with your friends. Shall we?\n' +
-    'Available games:\n' +
-    '/wouldyourather - Gimme a would you rather question\n'+
-    '/neverhaveiever - Have you ever done this?\n'+
-    '/fmk - Who do you want to fuck, marry and kill?\n'+
-    '/tod - Play truth or dare\n'+
-    '/truth - Only the "truth" questions of Truth or Dare\n'+
-    '/dare - Only the dares\n'+
-    '/pressTheButton - Would you press the button?\n'+
-    '/random - A random game!');
+        'Available games:\n' +
+        '/wouldyourather - Gimme a would you rather question\n' +
+        '/neverhaveiever - Have you ever done this?\n' +
+        '/fmk - Who do you want to fuck, marry and kill?\n' +
+        '/tod - Play truth or dare\n' +
+        '/truth - Only the "truth" questions of Truth or Dare\n' +
+        '/dare - Only the dares\n' +
+        '/pressTheButton - Would you press the button?\n' +
+        '/random - A random game!');
 }
 bot.launch();

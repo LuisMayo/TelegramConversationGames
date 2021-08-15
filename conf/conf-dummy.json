@@ -1,3 +1,4 @@
 {
-    "token": "YOUR-TG-TOKEN"
+    "token": "YOUR-TG-TOKEN",
+    "paymentToken": "OPTIONAL"
 }
