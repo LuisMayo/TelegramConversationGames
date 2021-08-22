@@ -37,7 +37,9 @@ bot.command(['contribute', 'donate'], (ctx) => {
             prices: [
                 { label: 'Contribution', amount: 100 }
             ],
-            
+            //@ts-ignore
+            max_tip_amount: 10000,
+            suggested_tip_amounts: [100, 200, 500, 1000],
         }
     );
 });
