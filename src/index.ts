@@ -56,6 +56,8 @@ registerCommand(8, 'wyptb', Games.PRESSTHEBUTTON, 'pressTheButton')
 registerCommand(9, 'wyptbnotsafe', Games.PRESSTHEBUTTON, 'pressTheButton')
 RandomGame.initRandomHelper(commandList, processGameCommand);
 
+bot.on("pre_checkout_query", (ctx) => ctx.answerPreCheckoutQuery(true));
+bot.on("successful_payment", (ctx) => ctx.reply('Thanks a lot for contributing with the project. Your help is invaluable <3'));
 bot.action(/random.*/, RandomGame.processButtonChange);
 bot.action(/.*/, Utils.executeCallback);
 bot.use(RandomGame.randomCommand);
