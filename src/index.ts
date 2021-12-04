@@ -97,7 +97,7 @@ function showStart(ctx: Telegraf.Context) {
         '/tod - Play truth or dare\n' +
         '/truth - Only the "truth" questions of Truth or Dare\n' +
         '/dare - Only the dares\n' +
-        '/pressTheButton - Would you press the button?\n' +
+        '/pressthebutton - Would you press the button?\n' +
         '/random - A random game!');
 }
 bot.launch();
