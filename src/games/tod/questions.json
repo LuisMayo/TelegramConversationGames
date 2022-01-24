@@ -818,7 +818,7 @@
     {
         "id": "102",
         "level": "5",
-        "summary": "Have you ever performed oral on someone of the same sex?",
+        "summary": "Have you ever performed oral on someone?",
         "time": "",
         "turns": "",
         "type": "Truth"
@@ -1218,7 +1218,7 @@
     {
         "id": "152",
         "level": "4",
-        "summary": "Take off your partner\u2019s bra (or nearest woman\u2019s) using only your teeth",
+        "summary": "Take off your partner\u2019s bra (or nearest) using only your teeth",
         "time": "",
         "turns": "",
         "type": "Dare"
@@ -4881,7 +4881,7 @@
     },
     {
         "type": "Dare",
-        "summary": "“I dare you to kiss someone of the same sex.”"
+        "summary": "“I dare you to kiss someone of the gender you're not attracted to (if any)”"
     },
     {
         "type": "Dare",
@@ -5381,7 +5381,7 @@
     },
     {
         "type": "Truth",
-        "summary": "Girls:Are you able to achieve orgasm just through breast stimulation?"
+        "summary": "Are you able to achieve orgasm just through breast stimulation?"
     },
     {
         "type": "Truth",
@@ -5393,7 +5393,7 @@
     },
     {
         "type": "Truth",
-        "summary": "Guys: Circumsized?"
+        "summary": "Are you circumsized?"
     },
     {
         "type": "Truth",
@@ -5789,10 +5789,6 @@
     },
     {
         "type": "Truth",
-        "summary": "Girls: Are you able to achieve orgasm just through breast stimulation?"
-    },
-    {
-        "type": "Truth",
         "summary": "What color/type of underwear are you wearing?"
     },
     {
@@ -5965,11 +5961,11 @@
     },
     {
         "type": "Truth",
-        "summary": "Girls: During sex, vaginal or anal?"
+        "summary": "During sex, vaginal or anal?"
     },
     {
         "type": "Truth",
-        "summary": "Girls: During masturbation, clitorial, vaginal, or anal?"
+        "summary": "People with vagina: During masturbation, clitorial, vaginal, or anal?"
     },
     {
         "type": "Truth",
