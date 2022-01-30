@@ -23,14 +23,7 @@ export class PressTheButtonService extends GameWithCallbackService<PressTheButto
 
     async getGameObject(ctx: Context): Promise<PressTheButtonBean | Error> {
         try {
-            let show_unconfirmed: boolean;
-            if (ctx.message.text.includes('wyptbsafe')) {
-                show_unconfirmed = false;
-            } else if (ctx.message.text.includes('wyptbnotsafe')) {
-                show_unconfirmed = true;
-            } else {
-                show_unconfirmed = Math.random() < 0.35;
-            }
+            let show_unconfirmed = false;
             const download = await fetch('https://api2.willyoupressthebutton.com/api/v2/dilemma/',
             {
                 method: 'POST',

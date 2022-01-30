@@ -23,7 +23,6 @@ bot.command('about', ctx => ctx.reply('Bot made with ❤ by @TLuigi003. Check it
 
 
 bot.command('fmk', ctx => ctx.reply('May you want to play /fmkguys or /fmkgirls ?'));
-bot.command('pressthebutton', ctx => ctx.reply('Do you want to play\n/wyptbsafe - A list of verified and moderated questions\n/wyptb - Any question, safe or not. it may include NSFW content\n/wyptbnotsafe - ONLY unchecked questions, it may include NSFW content'));
 bot.command('random', RandomGame.initFirstTimeMessage);
 bot.command(['contribute', 'donate'], (ctx) => {
     ctx.replyWithInvoice(
@@ -51,9 +50,9 @@ registerCommand(3, 'truth', Games.TOD);
 registerCommand(4, 'dare', Games.TOD);
 registerCommand(5, 'fmkguys', Games.FMK, 'fmk');
 registerCommand(6, 'fmkgirls', Games.FMK, 'fmk');
-registerCommand(7, 'wyptbsafe', Games.PRESSTHEBUTTON, 'pressTheButton');
+registerCommand(7, ['wyptbsafe', 'pressthebutton'], Games.PRESSTHEBUTTON, 'pressTheButton');
 registerCommand(8, 'wyptb', Games.PRESSTHEBUTTON, 'pressTheButton')
-registerCommand(9, 'wyptbnotsafe', Games.PRESSTHEBUTTON, 'pressTheButton')
+// registerCommand(9, 'wyptbnotsafe', Games.PRESSTHEBUTTON, 'pressTheButton')
 RandomGame.initRandomHelper(commandList, processGameCommand);
 
 bot.on("pre_checkout_query", (ctx) => ctx.answerPreCheckoutQuery(true));

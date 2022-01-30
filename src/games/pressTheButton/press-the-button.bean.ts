@@ -15,7 +15,7 @@ export class PressTheButtonBean implements GameObject {
 
     sendMessage(ctx: Context): void {
         const keyboardHelper = PressTheButtonService.instance.createNeverKeyboard();
-        ctx.reply(`${this.bean.confirmed === 1 ? '' : '⚠'} Would you press the button if\n\n${this.bean.txt1}\n\nbut\n\n${this.bean.txt2}\n=====\n${this.yesPercentage}% of users would press the button\n=====\n`,
+        ctx.reply(`Would you press the button if\n\n${this.bean.txt1}\n\nbut\n\n${this.bean.txt2}\n=====\n${this.yesPercentage}% of users would press the button\n=====\n`,
         { reply_markup: { inline_keyboard: keyboardHelper.buttons } }).then(message => {
             PressTheButtonService.instance.saveNewMessage(ctx.chat.id.toString(), message);
         });
