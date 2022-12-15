@@ -10,4 +10,5 @@ export interface TruthOrDareQuestions {
 export enum Type {
     Dare = "Dare",
     Truth = "Truth",
+    Starter ="Starter"
 }

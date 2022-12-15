@@ -10,31 +10,27 @@ export class TruthOrDareService implements GameService<TruthOrDare> {
     questions: TruthOrDareQuestions[];
     truthQuestions: TruthOrDareQuestions[] = [];
     dareQuestions: TruthOrDareQuestions[] = [];
+    questionsByCat = new Map<Type, TruthOrDareQuestions[]>();
 
     constructor() {
         this.questions = JSON.parse(fs.readFileSync('./src/games/tod/questions.json', { encoding: 'UTF-8' }));
+
         for (const question of this.questions) {
-            switch (question.type) {
-                case Type.Dare:
-                    this.dareQuestions.push(question);
-                    break;
-                case Type.Truth:
-                default:
-                    this.truthQuestions.push(question);
-                    break;
+            if (!this.questionsByCat.has(question.type)) {
+                this.questionsByCat.set(question.type, []);
             }
+            this.questionsByCat.get(question.type, question);
         }
     }
 
     async getGameObject(ctx?: Context): Promise<TruthOrDare> {
         let questionsArr: TruthOrDareQuestions[];
+        const commandEnd = ctx.message.text
         if (ctx.message.text.includes('tod')) {
             questionsArr = this.questions;
-        } else if (ctx.message.text.includes('truth')) {
-            questionsArr = this.truthQuestions;
-        } else if (ctx.message.text.includes('dare')) {
-            questionsArr = this.dareQuestions;
-        }
+        } else  {
+            questionsArr = this.questionsByCat.get;
+        } 
         return new TruthOrDare(questionsArr[Math.floor(Math.random() * questionsArr.length)].summary);
     }
 }

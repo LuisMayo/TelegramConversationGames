@@ -6142,5 +6142,257 @@
     {
         "type": "Dare",
         "summary": "Show the worst underwear you have or show the underwear your wearing right now."
+    },
+    {
+        "type": "Truth",
+        "summary": "What are your top three turn-ons?"
+    },
+    {
+        "type": "Truth",
+        "summary": "What is your deepest darkest fear?"
+    },
+    {
+        "type": "Truth",
+        "summary": "Tell me about your first kiss."
+    },
+    {
+        "type": "Truth",
+        "summary": "Who is the sexiest person here?"
+    },
+    {
+        "type": "Truth",
+        "summary": "What is your biggest regret?"
+    },
+    {
+        "type": "Truth",
+        "summary": "Who here has the nicest butt?"
+    },
+    {
+        "type": "Truth",
+        "summary": "Who is your crush?"
+    },
+    {
+        "type": "Truth",
+        "summary": "Who was the last person you licked?"
+    },
+    {
+        "type": "Truth",
+        "summary": "Have you ever cheated or been cheated on?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Tell me about your most awkward date."
+    },
+    {
+        "type": "Truth",
+        "summary": ". Have you ever made out with someone here?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What are you most self-conscious about?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". When was the last time you peed in bed?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the biggest lie you have ever told?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most embarrassing picture of you?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Who is the person you most regret kissing?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Tell us your most embarrassing vomit story."
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the naughtiest thing you’ve done in public?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What do most people think is true about you, but isn’t?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the biggest thing you’ve gotten away with?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What would you do if you were the opposite sex for a month?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most expensive thing you have stolen?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most childish thing you still do?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What’s the worst time you let someone take the blame for something you\\ndid?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is something your friends would never expect that you do?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Who here would you most like to make out with?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What lie have you told that hurt someone?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the meanest you have been to someone that didn’t deserve it?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is something that people think you would never be into, but you\\nare?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What was the worst encounter you had with a police officer?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the silliest thing you have an emotional attachment to?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Where is the strangest place you have peed?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Have you ever crapped your pants since you were a child?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most embarrassing thing your parents have caught you doing?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What secret about yourself did you tell someone in confidence and then\\nthey told a lot of other people?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". When was the most inappropriate time you farted?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the scariest dream you have ever had?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most embarrassing thing in your room?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Why did you break up with your last boyfriend or girlfriend?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the stupidest thing you have ever done?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the grossest thing that has come out of your body?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is your favorite thing that your boyfriend or girlfriend does?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What terrible thing have you done that you lied to cover up?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Who have you loved but they didn’t love you back?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is something that you have never told anyone?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most disgusting habit you have?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What pictures or videos of you do you wish didn’t exist?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What was the cruelest joke you played on someone?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most embarrassing thing you have put up on social media?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What horrible thing have you done that no one else found out about?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What was the most awkward romantic encounter you have had?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the grossest thing you have had in your mouth?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Tell me about the last time someone unexpectedly walked in on you while\\nyou were naked."
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most embarrassing nickname you have ever had?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the most embarrassing series of texts you have on your phone?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Describe your most recent romantic encounter in detail."
+    },
+    {
+        "type": "Truth",
+        "summary": ". What is the weirdest thing you have done for a boyfriend or girlfriend?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Is it true that you (whatever you or the group suspects they do / did)?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". When was the last time you wiped a booger off on something that\\nshouldn’t have boogers on it?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". What do you really hope your parents never find out about?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". Tell me something you don’t want me to know."
+    },
+    {
+        "type": "Truth",
+        "summary": ". What have you done that people here would judge you most for doing?"
+    },
+    {
+        "type": "Truth",
+        "summary": ". If you starred in a romance, what would it be like?"
     }
 ]
