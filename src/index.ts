@@ -45,13 +45,15 @@ bot.command(['contribute', 'donate'], (ctx) => {
 
 registerCommand(0, 'wouldyourather', Games.RATHER, 'rather');
 registerCommand(1, 'neverhaveiever', Games.NEVER, 'never');
-registerCommand(2, 'tod', Games.TOD);
+// registerCommand(2, 'tod', Games.TOD);
+registerCommand(10, 'question', Games.TOD);
+registerCommand(11, 'starter', Games.TOD);
 registerCommand(3, 'truth', Games.TOD);
-registerCommand(4, 'dare', Games.TOD);
+// registerCommand(4, 'dare', Games.TOD);
 registerCommand(5, 'fmkguys', Games.FMK, 'fmk');
 registerCommand(6, 'fmkgirls', Games.FMK, 'fmk');
-registerCommand(7, ['wyptbsafe', 'pressthebutton'], Games.PRESSTHEBUTTON, 'pressTheButton');
-registerCommand(8, 'wyptb', Games.PRESSTHEBUTTON, 'pressTheButton')
+registerCommand(7, 'pressthebutton', Games.PRESSTHEBUTTON, 'pressTheButton');
+// registerCommand(8, 'wyptb', Games.PRESSTHEBUTTON, 'pressTheButton')
 // registerCommand(9, 'wyptbnotsafe', Games.PRESSTHEBUTTON, 'pressTheButton')
 RandomGame.initRandomHelper(commandList, processGameCommand);
 

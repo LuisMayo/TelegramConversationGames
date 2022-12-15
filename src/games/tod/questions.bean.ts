@@ -8,6 +8,6 @@ export interface TruthOrDareQuestions {
 }
 
 export enum Type {
-    Dare = "Dare",
-    Truth = "Truth",
+    Truth = "truth",
+    Starter ="starter"
 }
