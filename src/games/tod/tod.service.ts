@@ -19,18 +19,21 @@ export class TruthOrDareService implements GameService<TruthOrDare> {
             if (!this.questionsByCat.has(question.type)) {
                 this.questionsByCat.set(question.type, []);
             }
-            this.questionsByCat.get(question.type, question);
+            this.questionsByCat.get(question.type).push(question);
         }
     }
 
     async getGameObject(ctx?: Context): Promise<TruthOrDare> {
         let questionsArr: TruthOrDareQuestions[];
-        const commandEnd = ctx.message.text
-        if (ctx.message.text.includes('tod')) {
-            questionsArr = this.questions;
-        } else  {
-            questionsArr = this.questionsByCat.get;
-        } 
+        let commandEnd = ctx.message.text?.indexOf("@");
+        if (commandEnd === -1 ) {
+            commandEnd =  ctx.message.text?.indexOf(" ");
+        }
+        if (commandEnd === -1 ) {
+            commandEnd =  ctx.message.text.length;
+        }
+        const command = ctx.message.text.substring(1, commandEnd).trim();
+        questionsArr = this.questionsByCat.get(command as Type) ?? this.questions;
         return new TruthOrDare(questionsArr[Math.floor(Math.random() * questionsArr.length)].summary);
     }
 }
