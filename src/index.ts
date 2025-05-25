@@ -9,8 +9,7 @@ import { CommandObject } from "./command-object";
 import { RandomGame } from "./random-game";
 
 const confPath = process.argv[2] || './conf';
-const conf: Conf = JSON.parse(fs.readFileSync(confPath + '/conf.json', { encoding: 'UTF-8' }));
-const bot = new Telegraf.default(conf.token);
+const bot = new Telegraf.default(process.env.token!);
 const commandList: CommandObject[] = [];
 GeneralService.bot = bot;
 
@@ -32,7 +31,7 @@ bot.command(['contribute', 'donate'], (ctx) => {
             payload: 'null',
             start_parameter: 'null',
             description: 'Help to keep this project alive with a small contribution',
-            provider_token: conf.paymentToken,
+            provider_token: process.env.token!,
             prices: [
                 { label: 'Contribution', amount: 100 }
             ],
