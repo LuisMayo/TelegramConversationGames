@@ -31,7 +31,7 @@ bot.command(['contribute', 'donate'], (ctx) => {
             payload: 'null',
             start_parameter: 'null',
             description: 'Help to keep this project alive with a small contribution',
-            provider_token: process.env.token!,
+            provider_token: process.env.paymentToken!,
             prices: [
                 { label: 'Contribution', amount: 100 }
             ],
